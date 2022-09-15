@@ -23,7 +23,7 @@ from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
 
 #파일 다운로드 처리
-app.config["CLIENT_IMAGES"] = "/home/dir_v/images"
+app.config["CLIENT_IMAGES"] = "/home/dir_v/crawl_site/UOSCV-webcrawl/images"
 
    
             

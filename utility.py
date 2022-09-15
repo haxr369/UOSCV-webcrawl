@@ -46,7 +46,7 @@ def download_im(main_keyword, sub_keyword, img_numb,output_path="/home/dir_v"):
 
     options.add_argument('--disable-dev-shm-usage')
     
-    driver = webdriver.Chrome(executable_path="/home/dir_v/flaskapp/chromedriver",options=options)
+    driver = webdriver.Chrome(executable_path="/home/dir_v/crawl_site/UOSCV-webcrawl/chromedriver",options=options)
     
     driver.implicitly_wait(3)
     
