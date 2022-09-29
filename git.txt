@@ -1,0 +1,94 @@
+생활코딩 강의 링크
+https://www.youtube.com/playlist?list=PLuHgQVnccGMD-XRW1zlqC7U2uCzOxyT8u
+
+
+
+##### 버전관리용 git 사용법 ######
+1. git init : 현재 디랙토리를 사용하는 걸 git에게 알려줌
+>>> check .git. in the .git other version is stored
+
+2. git status         : git이 관리하고 있는 파일 확인
+3. git add {파일이름}  : git이 파일을 최초로 관리하도록 명령 
+			, 파일 수정 후 새로운 버전 생성
+			
+4. git commit         : 최초 버전 생성
+			, 수정 후 새로운 버전 저장
+5. git log            : 버전 저장 역사 확인			
+
+꼭 파일 수정 후 git add, git commit으로 버전 N을 생성
+
+######3 내가 파일을 수정했다고 알림 처음시작할 때 필요 ######
+git config --global user.name haxr369
+git config --global user.email haxr369@gmail.com
+
+
+#############  git log 사용법
+git log -p                       : 각 버전마다 차이점 확인
+git diff [commit id]              : 각 commit 간의 차이를 알고 싶을때,
+
+
+
+
+-----------------------------------git으로 협업하기-----------------------------
+
+
+1. 원하는 경로에 github의 폴더를 clone해온다.
+2. local에서 코드를 수정하고, commit한다.
+3. (2)의 결과 local head는 새로운 버전을 바라보고, 원격 head는 old 버전을 바라본다.
+4. 소스제어로 수정된 코드를 push하면, github에도 수정된 버전이 올라간다.
+
+
+--------두 로컬에서 새로운 버전을 계속 업데이트하기-----
+1. 로컬1에서 코드 수정 후 push => github에 저장.
+2. 로컬2에서 pull(풀) => 로컬1의 수정사항 가져오기
+3. 로컬2에서 코드 수정 후 push => github에 저장.
+.
+.
+.
+반복
+
+동료를 원격저장소에 추가하는 방법
+레파지토리 -> settings -> collaborators -> add people -> 동료 이메일 입력
+
+
+------협업문제----
+1. 로컬1에서 파일1을 pull했다.
+2. 로컬2에서 파일1을 pull했다. 
+3. 로컬1에서 파일1을 수정, commit, push까지 했다.
+4. 로컬2에서 파일1을 수정, commit, push했다. =>>>>>  에러 발생(충돌) push되지 않는다.
+5. 로컬2에서 fetch => 로컬1의 수정사항이 branch로 나타남
+6. 로컬2에서 marge => 로컬1의 수정사항 branch가 병합됨 => 이때 push할 자격이 생김 
+7. (5),(6)을 한번에 하는 방법은 pull하는 것
+
+pull = fetch(원격저장소에서 읽어오기) + marge
+pull할 때 marge 에러나면 "git congif --global pull.rebase false"를 작성한다.
+
+
+------- 두 로컬에서 동시에 같은 파일 수정하면 충돌남-----
+1. 로컬1에서 파일1을 pull했다. 로컬1에서 파일1을 수정, commit, push까지 했다.
+2. 로컬2에서 파일1을 pull했다.
+
+if 두 로컬이 같은 파일을 똑같이 수정,commit, 한쪽만 push:
+	한쪽은 push 거부당함
+elif 두 로컬이 같은 파일을 다르게 수정, commit, 한쪽만 push:
+	if 수정이 다른 행:
+		한쪽은 push 거부당함
+		but pull 할 경우 자동으로 병합된다. 그 후 push하면 ok
+	elif 수정이 같은 행: *****************!!중요!!**************
+		pull하면
+		컴플릿트가 발생 => 올바르게 두 내용을 합쳐서 코딩
+		그 후에 커밋하면 충돌을 해결해서 push 가능!!!!!!!!!!!!!!!!!!
+		
+		
+https://youtu.be/vI8FFvQge2w
+
+백업하는 방법
+
+
+
+
+
+
+
+
+
