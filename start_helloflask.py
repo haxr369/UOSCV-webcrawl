@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-from helloflask import app
+import helloflask
 
-app.run(host="0.0.0.0") #127.0.0.1(=localhost)
+helloflask.run(host="0.0.0.0") #127.0.0.1(=localhost)
 
 
 #lazy loading은 처음부터 모든 것을 올리지 않겠다 차근차근~
