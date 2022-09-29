@@ -10,7 +10,7 @@
     <br>
     <h1 align="center">LivingLab Plant Classification</h1>
     <br>
-    <form align="center" action="/show_result" method="POST" enctype="multipart/form-data">
+    <form align="center" action="/image_get" method="POST" enctype="multipart/form-data">
         <h2 align="center">Reference Images</h2>
         <table align="center">
             <tr>
@@ -25,10 +25,11 @@
  
         </table>
         <br><br>
+        <h2><a href="/">처음으로</a></h2>
         <h2 align="center">Target Image</h2>
         <div align="center" id='view_area'></div>
         <br>
-        <input type="file" name="user_img" id="user_img" value="userIMgage" onchange="previewImage(this,'view_area')"/>
+        <input type="file" name="file" />
         <input type="submit" value="확인"/>
     </form>
     <br><br><br>
